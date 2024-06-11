@@ -15,6 +15,7 @@ namespace Celestial_Rescale
         internal double starFactor;
         internal float starFactor2;
 
+
         /*
         internal static Dictionary<string, FloatCurve> bodyPresureCurvesDictionary =
             new Dictionary<string, FloatCurve>();
@@ -231,8 +232,8 @@ namespace Celestial_Rescale
         {
             if (body != null && body.ocean) // Additional null check
             {
-                body.oceanFogDensityPQSMult *= scaleFactor2;
-                body.oceanFogPQSDepth *= scaleFactor;
+                body.oceanFogDensityPQSMult *= (0.9921 * scaleFactor2);
+                body.oceanFogPQSDepth *= (0.9921 * scaleFactor);
                 Debug.Log("[CelestialRescale]" + " [" + body.name + "] " + body.oceanFogPQSDepth);
                 body.pqsController.RebuildSphere();
             }
